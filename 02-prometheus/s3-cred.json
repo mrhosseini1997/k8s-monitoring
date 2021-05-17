@@ -1,0 +1,7 @@
+type: S3
+config:
+  bucket: "thanos"
+  endpoint: "s3.ir-thr-at1.arvanstorage.com"
+  access_key: "x"
+  secret_key: "x"
+  signature_version2: true
