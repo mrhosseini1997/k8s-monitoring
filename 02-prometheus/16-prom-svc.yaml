@@ -9,13 +9,13 @@ metadata:
   labels:
     name: prometheus
 spec:
-  type: NodePort
+        #  type: NodePort
   selector: 
     statefulset.kubernetes.io/pod-name: prometheus-0
   ports: 
     - name: prometheus 
       port: 8080
-      nodePort: 32010
+      #nodePort: 32010
       targetPort: prometheus
 ---
 apiVersion: v1
@@ -35,24 +35,24 @@ spec:
     - name: prometheus 
       port: 8080
       targetPort: prometheus
----
-apiVersion: v1
-kind: Service
-metadata: 
-  name: prometheus-2-service
-  annotations: 
-    prometheus.io/scrape: "true"
-    prometheus.io/port: "9090"
-  namespace: monitoring
-  labels:
-    name: prometheus
-spec:
-  selector: 
-    statefulset.kubernetes.io/pod-name: prometheus-2
-  ports: 
-    - name: prometheus 
-      port: 8080
-      targetPort: prometheus
+      #---
+#apiVersion: v1
+#kind: Service
+#metadata: 
+#  name: prometheus-2-service
+#  annotations: 
+#    prometheus.io/scrape: "true"
+#    prometheus.io/port: "9090"
+#  namespace: monitoring
+#  labels:
+#    name: prometheus
+#spec:
+#  selector: 
+#    statefulset.kubernetes.io/pod-name: prometheus-2
+#  ports: 
+#    - name: prometheus 
+#      port: 8080
+#      targetPort: prometheus
 ---
 #This service creates a srv record for querier to find about store-api's
 apiVersion: v1

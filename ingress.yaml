@@ -15,3 +15,61 @@ spec:
               number: 9090
         path: /
         pathType: Prefix
+
+  - host: grafana.cluster.cncf.ir
+    http:
+      paths:
+      - backend:
+          service:
+            name: grafana
+            port:
+              number: 3000
+        path: /
+        pathType: Prefix
+
+
+  - host: prometheus-0.cluster.cncf.ir
+    http:
+      paths:
+      - backend:
+          service:
+            name: prometheus-0
+            port:
+              number: 8080
+        path: /
+        pathType: Prefix
+
+  - host: prometheus-1.cluster.cncf.ir
+    http:
+      paths:
+      - backend:
+          service:
+            name: prometheus-1
+            port:
+              number: 8080
+        path: /
+        pathType: Prefix
+
+  - host: alertmanager.cluster.cncf.ir
+    http:
+      paths:
+      - backend:
+          service:
+            name: alertmanager
+            port:
+              number: 9093
+        path: /
+        pathType: Prefix
+
+
+  - host: thanos-ruler.cluster.cncf.ir
+    http:
+      paths:
+      - backend:
+          service:
+            name: thanos-ruler
+            port:
+              number: 9090
+        path: /
+        pathType: Prefix
+

@@ -50,12 +50,12 @@ metadata:
   name: thanos-querier
   namespace: monitoring
 spec:
-  type: NodePort
+        # type: NodePort
   ports:
   - port: 9090
     protocol: TCP
     targetPort: http
-    nodePort: 32006
+    #    nodePort: 32006
     name: http
   selector:
     app: thanos-querier
